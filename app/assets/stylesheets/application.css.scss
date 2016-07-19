@@ -16,3 +16,56 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.main-content {
+	padding-top: 1em;
+	padding-left: 300px;
+	
+}
+
+#sidebar {
+	width: 150px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background: #f5f7f9;
+	padding: 7em 0 0 0;
+	border-right: 1px solid #d6dce0;
+
+	#category {
+		list-style: none;
+		position: absolute;
+		padding-top: 5em;
+		padding-right: 3em;
+		font-weight: 700;
+		font-size: 1.3em;
+		color: #33acb7;
+	}
+
+	#logo {
+		transform: scale(0.5, 0.5);
+		position: absolute;
+		left: -5.5em;
+		top: -6em;
+	}
+	.btn-group-lg {
+		padding-top: 8em;
+		text-align: right;
+		
+		.btn {
+			font-weight: 400;
+			font-size: 1.5em;
+			padding: 0.2em 0.5em;
+			color: #9eafba;
+			text-decoration: none;
+				
+			&:hover {
+				color: #36acb7;
+			}
+		}
+		.active {
+			color: #f3acb7;
+		}
+	}
+}
