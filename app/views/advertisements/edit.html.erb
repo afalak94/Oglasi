@@ -1,0 +1,9 @@
+<h2>Uredi oglas</h2>
+
+<%= simple_form_for @advertisement, html: { multipart: true } do |f| %>
+	<%= f.select :category_id, @categories %>
+	<%= f.file_field :image %>
+	<%= f.input :title, label: "Naslov" %>
+	<%= f.input :body, label: "Opis" %>
+	<%= f.button :submit %>
+<% end %>

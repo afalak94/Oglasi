@@ -1,0 +1,14 @@
+<%= image_tag @advertisement.image.url(:medium) %>
+
+<p>
+	<strong>Naslov: </strong>
+	<%= @advertisement.title %>
+</p>
+
+<p>
+	<strong>Opis: </strong>
+	<%= @advertisement.body %>
+</p>
+
+<%= link_to 'Nazad', advertisements_path %>
+<%= link_to 'Uredi', edit_advertisement_path(@advertisement) %>

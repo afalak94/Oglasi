@@ -1,1 +1,18 @@
-<h1>Index page</h1>
+<h1 class="current-category"><%= params[:category] %></h1>
+
+<% if @advertisements.count == 0 %>
+	<h1>Trenutno nema oglasa u kategoriji <%= params[:category] %></h1>
+
+<% else %>
+
+	<div class="row">
+		<% @advertisements.each do |ad| %>
+			<div class="col-md-3">
+				<a href="/advertisements/<%= ad.id %>">
+					<%= image_tag ad.image.url(:medium), class: "ad" %>
+				</a>
+			</div>
+		<% end %>
+	</div>
+
+<% end %>
