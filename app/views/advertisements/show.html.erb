@@ -1,14 +1,64 @@
-<%= image_tag @advertisement.image.url(:medium) %>
 
-<p>
-	<strong>Naslov: </strong>
-	<%= @advertisement.title %>
-</p>
+		<div class="row">
+			
+			<div class="col-md-6">
+			
+				<%= image_tag @advertisement.image.url(:medium), class: "ad-show" %>
+				<div class="star-rating" data-score= <%= @avg_review %> ></div>
+				<div class="table-responsive"></div>
+					<table class="table">
+						<tbody>
+							<tr>
+								<td><strong>Naslov: </strong></td>
+								<td><%= @advertisement.title %></td>
+							</tr>
 
-<p>
-	<strong>Opis: </strong>
-	<%= @advertisement.body %>
-</p>
+							<tr>
+								<td><strong>Opis: </strong></td>
+								<td><%= @advertisement.body %></td>
+							</tr>
 
-<%= link_to 'Nazad', advertisements_path %>
-<%= link_to 'Uredi', edit_advertisement_path(@advertisement) %>
+							<tr>
+								<td><strong>Kontakt: </strong></td>
+								<td><%= @advertisement.user.email %></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div><!-- oglas -->
+
+			<div class="col-md-6">
+
+				<h3>Recenzije</h3>
+		        <% if @reviews.blank? %>
+		          <h3>Trenutno nema recenzija, ostavite prvu!</h3>
+		          <%= link_to "Napiši recenziju", new_advertisement_review_path(@advertisement), class: 'btn btn-danger' %>
+		        <% else %>
+		          <% @reviews.each do |review| %>
+		            <div class="reviews">
+		              <div class="star-rating" data-score= <%= review.rating %> ></div>
+		              <p><%= review.comment %></p>
+		            </div>
+		          <% end %>
+		          <br>
+		          <%= link_to "Napiši recenziju", new_advertisement_review_path(@advertisement), class: 'btn btn-danger' %>
+		        <% end %>
+
+			</div><!-- recenzije -->
+
+		</div><!-- row -->
+
+<br>
+<%= link_to 'Nazad', advertisements_path, class: 'btn btn-default' %>
+<%= link_to 'Uredi', edit_advertisement_path(@advertisement), class: 'btn btn-default' %>
+
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>

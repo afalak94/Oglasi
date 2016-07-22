@@ -9,9 +9,9 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = Review.new(review_params)
+		@review.user_id = current_user.id
 		@review.advertisement_id = @advertisement.id
-		@review.user_id == current_user.id
-
+		
 		if @review.save
 			redirect_to advertisement_path(@advertisement)
 		else

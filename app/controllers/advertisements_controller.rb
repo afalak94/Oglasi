@@ -3,11 +3,22 @@ class AdvertisementsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :edit]
 
 	def index
-		@advertisements = Advertisement.all.order("created_at DESC")
+		if params[:category].blank?
+			@advertisements = Advertisement.all.order("created_at DESC")
+		else
+			@category_id = Category.find_by(name: params[:category]).id
+			@advertisements = Advertisement.where(:category_id => @category_id).order("created_at DESC")
+		end
 	end
 
 	def show
-		
+		@reviews = Review.where(advertisement_id: @advertisement.id).order("created_at DESC")
+
+		if @advertisement.reviews.blank?
+			@avg_review = 0
+		else
+			@avg_review = @advertisement.reviews.average(:rating).round(2)
+		end
 	end
 
 	def new
