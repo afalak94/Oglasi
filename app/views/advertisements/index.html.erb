@@ -7,10 +7,12 @@
 
 	<div class="row">
 		<% @advertisements.each do |ad| %>
-			<div class="col-md-3">
-				<a href="/advertisements/<%= ad.id %>">
-					<%= image_tag ad.image.url(:medium), class: "ad" %>
-				</a>
+			<div class="col-md-4">
+				<div class="box">
+					<a href="/advertisements/<%= ad.id %>">
+						<%= image_tag ad.image.url(:medium), class: "img-responsive" %>
+					</a>
+				</div>
 			</div>
 		<% end %>
 	</div>

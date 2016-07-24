@@ -17,6 +17,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+	background-color: #ccd9ff;
+}
+
+.box {
+	background-color: yellow;
+}
+
 .main-content {
 	padding-top: 0;
 	padding-left: 300px;
@@ -45,6 +53,10 @@
 	background: #f5f7f9;
 	padding: 7em 0 0 0;
 	border-right: 3px solid yellow;
+
+	.active {
+		background-color: yellow;
+	}
 
 	#category {
 		list-style: none;
@@ -83,10 +95,32 @@
 	}
 }
 
+.info {
+	border-right: 5px solid yellow;
+	border-top: 5px solid yellow;
+	padding-top: 5px;
+	border-radius: 5px;
+}
+
+.recenzije {
+	border-left: 5px solid yellow;
+	padding-left: 5px;
+	border-bottom: 5px solid yellow;
+	padding-bottom: 5px;
+}
+
 .reviews {
 	padding: 10px 0;
 	border-bottom: 1px solid #EAEAEA;
 	.star-rating {
 		padding-bottom: 8px;
 	}
+}
+
+.img-responsive {
+	height: 200px;
+	width: 400px;
+	padding: 5px;
+	border: 3px solid black;
+	border-radius: 5px;
 }

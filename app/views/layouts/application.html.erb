@@ -38,7 +38,7 @@
 	<div class="row">
 		<!-- SIDEBAR -->
 		<div id="sidebar">
-			<div class="col-md-3">
+			<div class="col-md-1">
 				<div class="container">
 					<div id="logo">
 						<%= link_to root_path do %>
@@ -54,7 +54,9 @@
 				<div class="btn-group-vertical btn-group-lg" role="group">
 					<% Category.all.each do |category| %>
 						<button type="button" class="btn btn-default">
-							<%= link_to category.name, advertisements_path(category: category.name) %>
+							<div class="<%= 'active' if params[:category] == category.name %>">
+								<%= link_to category.name, advertisements_path(category: category.name) %>
+							</div>
 						</button>
 					<% end %>
 				</div>
@@ -64,7 +66,7 @@
 
 		<div class="well">
 			<div class="main-content"></div>
-				<div class="col-md-8 col-md-offset-1">
+				<div class="col-md-10 col-md-offset-1">
 					<div class="container-fluid">
 						<p class="notice"><%= notice %></p>
 						<p class="alert"><%= alert %></p>
