@@ -1,5 +1,7 @@
 <h1 class="current-category"><%= params[:category] %></h1>
-
+<% if params[:category].blank? %>
+	<h2>Najnoviji oglasi</h2>
+<% end %>
 <% if @advertisements.count == 0 %>
 	<h1>Trenutno nema oglasa u kategoriji <%= params[:category] %></h1>
 

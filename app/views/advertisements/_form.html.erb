@@ -1,6 +1,6 @@
 <%= simple_form_for @advertisement, html: {multipart: true} do |f| %>
 	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
-	<%= f.file_field :image %>
+	<h5>Odaberite fotografiju: <%= f.file_field :image %></h5>
 	<%= f.input :title, label: "Naslov" %>
 	<%= f.input :body, label: "Opis" %>
 	<%= f.submit "Stvori oglas", class: "btn btn-primary" %>

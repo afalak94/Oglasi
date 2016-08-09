@@ -22,7 +22,7 @@ body {
 }
 
 .box {
-	background-color: yellow;
+	background-color: #ffff80;
 }
 
 .main-content {
@@ -44,18 +44,29 @@ body {
 	padding-top: 0;
 }
 
+.navbar {
+	background-color: #ffff80;
+	border-bottom: 3px solid black;
+
+	.navbar-brand {
+		color: #000066;
+	}
+}
+
 #sidebar {
 	width: 150px;
 	position: fixed;
 	left: 0;
 	top: 0;
 	height: 100%;
-	background: #f5f7f9;
+	background-color: #ffff80;
 	padding: 7em 0 0 0;
-	border-right: 3px solid yellow;
-
-	.active {
-		background-color: yellow;
+	border-right: 3px solid black;
+	
+	.btn-default {
+		.active {
+			background-color: #ffff80;
+		}
 	}
 
 	#category {
@@ -96,22 +107,22 @@ body {
 }
 
 .info {
-	border-right: 5px solid yellow;
-	border-top: 5px solid yellow;
+	border-right: 5px solid #ffff80;
+	border-top: 5px solid #ffff80;
 	padding-top: 5px;
 	border-radius: 5px;
 }
 
 .recenzije {
-	border-left: 5px solid yellow;
+	border-left: 5px solid #ffff80;
 	padding-left: 5px;
-	border-bottom: 5px solid yellow;
+	border-bottom: 5px solid #ffff80;
 	padding-bottom: 5px;
 }
 
 .reviews {
 	padding: 10px 0;
-	border-bottom: 1px solid #EAEAEA;
+	border-bottom: 1px solid #ffff80;
 	.star-rating {
 		padding-bottom: 8px;
 	}

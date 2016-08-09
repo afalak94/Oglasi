@@ -55,7 +55,13 @@
 
 <br>
 <%= link_to 'Nazad', advertisements_path, class: 'btn btn-default' %>
-<%= link_to 'Uredi', edit_advertisement_path(@advertisement), class: 'btn btn-default' %>
+
+<% if user_signed_in? %>
+	<% if @advertisement.user_id == current_user.id %>
+		<%= link_to 'Uredi', edit_advertisement_path(@advertisement), class: 'btn btn-default' %>
+		<%= link_to 'Ukloni', advertisement_path(@advertisement), method: :delete, data: { confirm: "Jeste li sigurni da želite ukloniti oglas?"}, class: 'btn btn-default' %>
+	<% end %>
+<% end %>
 
 
 <script>
