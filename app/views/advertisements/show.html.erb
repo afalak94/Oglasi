@@ -54,7 +54,7 @@
 		</div><!-- row -->
 
 <br>
-<%= link_to 'Nazad', advertisements_path, class: 'btn btn-default' %>
+<%= link_to 'Nazad', advertisements_path, class: 'btn btn-default show-btn' %>
 
 <% if user_signed_in? %>
 	<% if @advertisement.user_id == current_user.id %>
