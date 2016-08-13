@@ -18,15 +18,18 @@
 @import "bootstrap";
 
 body {
-	background-color: #ccd9ff;
+	background: #FC354C; 
+	background: -webkit-linear-gradient(right, #FC354C, #0ABFBC);
+	background: -o-linear-gradient(right, #FC354C, #0ABFBC);
+	background: linear-gradient(to left, #FC354C, #0ABFBC);
 }
 
 .box {
-	background-color: #ffff80;
+	background-color: #fce697;
 }
 
 .main-content {
-	padding-top: 0;
+	padding-top: 10px;
 	padding-left: 300px;
 	
 }
@@ -45,7 +48,10 @@ body {
 }
 
 .navbar {
-	background-color: #ffff80;
+	background: #FC354C; 
+	background: -webkit-linear-gradient(right, #FC354C, #0ABFBC);
+	background: -o-linear-gradient(right, #FC354C, #0ABFBC);
+	background: linear-gradient(to left, #FC354C, #0ABFBC); 
 	border-bottom: 3px solid black;
 
 	.navbar-brand {
@@ -59,13 +65,13 @@ body {
 	left: 0;
 	top: 0;
 	height: 100%;
-	background-color: #ffff80;
+	background-color: #fce697;
 	padding: 7em 0 0 0;
 	border-right: 3px solid black;
 	
 	.btn-default {
 		.active {
-			background-color: #ffff80;
+			background-color: #fce697;
 		}
 	}
 
